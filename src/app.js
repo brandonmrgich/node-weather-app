@@ -50,15 +50,12 @@ app.get('/weather', (req, res) => {
     geocode(req.query.address, (err, { longitude, latitude, location } = {}) => {
         if (err) return res.send({ err })
         
-        weather(latitude, longitude, (err, { temperature, description }) => {
+        weather(latitude, longitude, (err, { location, localTime, forecastTime,
+            description, temperature, feelsLike, humidity }) => {
             if (err) return res.send({ err })
 
-            res.send({
-                address: req.query.address,
-                location,
-                description,
-                temperature
-            })
+            res.send({ location, localTime, forecastTime, description, 
+                temperature, feelsLike, humidity })
         })
     })
 })

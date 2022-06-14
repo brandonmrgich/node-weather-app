@@ -18,9 +18,12 @@ weatherForm.addEventListener('submit', (e) => {
                 msg2.textContent = ''
             }
             else {
-                msg1.textContent = data.location
-                msg2.textContent = data.description + ', ' + data.temperature
+                msg1.textContent = 'It is currently ' + data.localTime + ' in: ' + data.location + '.'
+                msg2.textContent = ( 'According to the data collected at ' + data.forecastTime 
+                    + ' it is ' + data.description + ' at ' + data.temperature + 'f '
+                    + ' with a humidity level of ' + data.humidity + '%, and feels like ' 
+                    + data.feelsLike + 'f.' )
             }
         })
     })
-})
+})           
