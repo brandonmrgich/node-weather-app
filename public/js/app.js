@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     msg1.textContent = 'Searching for \"' + location + '\"'
     msg2.textContent = ''
 
-    fetch('http://127.0.0.1:3000/weather?address=' + location).then((res) => {
+    fetch('/weather?address=' + location).then((res) => {
         res.json().then((data) => {
             if (data.err) { 
                 msg1.textContent = data.err
