@@ -18,7 +18,8 @@ weatherForm.addEventListener('submit', (e) => {
                 msg2.textContent = ''
             }
             else {
-                msg1.textContent = 'It is currently ' + data.localTime + ' in: ' + data.location + '.'
+                msg1.textContent = ( 'It is currently ' + data.localTime + ' in: ' + location 
+                    + ', ' + data.location + '.' )
                 msg2.textContent = ( 'According to the data collected at ' + data.forecastTime 
                     + ' it is ' + data.description + ' at ' + data.temperature + 'f '
                     + ' with a humidity level of ' + data.humidity + '%, and feels like ' 
